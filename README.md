@@ -242,46 +242,213 @@ MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
 
 ## 🇬🇧 About
 
-**Dialectic** evaluates product ideas through a **three-gate review funnel**: Market Validation → Feasibility → Design Review. Each gate follows: Deconstruct → Model → Adversarial Review → Converge.
+> **Most methodologies teach you: "Build a framework, then score it."**
+> **Dialectic teaches you: "Assume you're wrong, then prove why."**
+>
+> That's the fundamental gap. A conclusion that hasn't survived adversarial review is still just a guess.
 
-> "A conclusion that hasn't survived adversarial review is still just a guess."
+---
 
-Most methodologies teach you *how to build*. Dialectic teaches you *how to destroy your own conclusions* — then rebuild what survives.
+### 🎯 What Problem Does This Solve?
 
-### Quick Try
+| 😵 Without Dialectic | 🧠 With Dialectic |
+|----------------------|-------------------|
+| "I feel this is a real need" | Pain(3)×Freq(2)×Dissatisfaction(1)=**6, false need** |
+| "No competitors = blue ocean" | "More likely: nobody found a viable approach" |
+| "Users said they want this" | "Interest ≠ Need. Interest is free; need pays" |
+| "A 10% better UX will win" | "Users need 10× improvement to switch habits" |
+| 6 months wasted on wrong idea | 30 min, 5 fatal attacks identified, 6 months saved |
 
-<details>
-<summary>Click to see Dialectic in action (30 seconds)</summary>
+---
 
-> **Input**: "Evaluate whether an AI weekly-report generator is a real need."
+### ⚡ Quick Try
+
+<details open>
+<summary><b>👇 Click to expand — see Dialectic destroy a bad idea in 2 minutes</b></summary>
+<br/>
+
+> **Input**: "Evaluate whether an AI weekly-report generator is a real need"
+
+<blockquote>
+
+**⚡ Pre-step**: Small idea, reversible → Quick Scan (≥2 attacks)
+
+**Gate 1 · Market Validation**
 
 | Step | Finding |
 |------|---------|
-| ⚡ Pre-step | Small idea, reversible → Quick Scan (≥2 attacks) |
-| Model | Pain(2) × Frequency(1) × Dissatisfaction(2) = **4 → false need** |
-| Review | Once/week frequency can't sustain a product · ChatGPT already does this · No willingness to pay |
-| Verdict | **False need** 🛑 · Terminate |
+| ① Deconstruct | ✅ Reports are mandatory | ⚠️ Users hate writing them? | ❌ Users will pay? |
+| ② Model | Pain(2) × Frequency(1) × Dissatisfaction(2) = **4 → false need signal** |
+| ③ Review | 🔬 AI can't replace "work reflection" | 💡 Once/week can't sustain a product | 🎯 ChatGPT already does this |
+| ④ Converge | **Verdict: false need** 🛑 | Fatal: frequency kills it | Minority report: unless companies mandate AI tools… |
 
+**🚦 Terminate. Do not proceed.**
+
+</blockquote>
+
+> **30 minutes vs 6 months** — The right question doesn't need the right answer. It needs to be killed quickly if it's wrong.
 </details>
 
-### The Three Gates
+---
 
-| Gate | Key Question | If Failed |
-|------|-------------|-----------|
-| 🔍 **Market** | Does anyone actually need this? | 🛑 Stop. Don't discuss feasibility |
-| 🛠️ **Feasibility** | Can we build it? At what cost/risk? | 🛑 Stop. Even the best idea dies here |
-| 🎨 **Design** | Does the UX match the product? | ⚠️ Fix and re-review |
+### 📋 Core Process
 
-### Usage
-
-Dialectic is an **800-line plain-text instruction file** (`SKILL.md`). Platform-agnostic.
-
-```bash
-git clone https://github.com/shahuichao24-ops/Dialectic.git ~/.agents/skills/Dialectic
+```
+         ⚡ Pre-step: Choose review depth
+        (Quick Scan / Standard / Deep)
+                    │
+     ┌──────────────┼──────────────┐
+     ▼              ▼              ▼
+  ┌──────┐      ┌──────┐      ┌──────┐
+  │ ≥2   │      │ ≥3   │      │ ≥5   │  ← attacks
+  │attacks│     │attacks│     │attacks│
+  └──────┘      └──────┘      └──────┘
+                    │
+                    ▼
+     ┌─────────────────────────────┐
+     │  🔍 Gate 1: Market           │
+     │  Is this a real need?        │
+     │  ① Deconstruct → ② Model → ③ Review → ④ Converge │
+     │  → True / Weak / False / Need more data            │
+     └─────────────┬───────────────┘
+                   │ True need ✅
+                   ▼
+     ┌─────────────────────────────┐
+     │  🛠️ Gate 2: Feasibility      │
+     │  Can we build it? Worth it?  │
+     │  ① 6-Dim Assessment → ② Review → ③ Converge │
+     │  → Feasible / Conditional / Infeasible       │
+     └─────────────┬───────────────┘
+                   │ Feasible ✅
+                   ▼
+     ┌─────────────────────────────┐
+     │  🎨 Gate 3: Design Review    │
+     │  Does UX match the product?  │
+     │  ① Interaction → ② Visual → ③ Review → ④ Converge │
+     │  → Pass / Conditional / Redesign                  │
+     └─────────────┬───────────────┘
+                   │ Pass ✅
+                   ▼
+              ✅ Final report
+         → Invoke writing-plans for implementation
 ```
 
-Works with **Claude Code, Cursor, ChatGPT, DeepSeek, GitHub Copilot, Kimi, ZCode** — any AI tool that accepts custom prompts.
+#### Gate Quick Reference
 
-### License
+| Gate | Answers | If Failed |
+|------|---------|-----------|
+| 🔍 **Market** | Does anyone actually need this? | 🛑 Stop. Don't discuss feasibility |
+| 🛠️ **Feasibility** | Can we build it? Cost? Risk? | 🛑 Stop. Great ideas die on bad feasibility |
+| 🎨 **Design** | Does UX match product positioning? | ⚠️ Fix and re-review |
+
+> 💡 **Any gate that fails terminates the funnel.** Don't discuss "which tech stack" when the market doesn't even exist.
+
+---
+
+### 🧬 6 Key Mechanisms
+
+| Mechanism | One-liner |
+|-----------|-----------|
+| 🔬⚙️🎯⚖️💡 **Evidence Label** | Tag each attack with evidence type — prevents single-perspective blindness |
+| ⚖️ **Dissent Quota** | After N attacks all pointing one way → force-switch to the opposite stance |
+| 🔒 **Hemlock Rule** | Closed issues stay closed. Every review loop must find *new* wounds |
+| 🆕 **Novelty Gate** | Did this loop uncover a new angle? No → converged, stop looping |
+| 💀 **Pre-Mortem** | Fast-forward 12 months — we failed catastrophically. Top 3 causes? |
+| 📝 **Minority Report** | Even in the final verdict: "If this is wrong, the most likely reason is…" |
+
+---
+
+### 🔧 Use with Any AI Tool
+
+Dialectic is an **800-line plain-text instruction file** (`SKILL.md`). Platform-agnostic. No dependencies.
+
+```bash
+# One-line install
+git clone https://github.com/shahuichao24-ops/Dialectic.git ~/.agents/skills/Dialectic
+
+# Then say in natural language:
+# "Use Dialectic to evaluate [XXX]"
+```
+
+| Tool | How to Use |
+|------|-----------|
+| **Claude Code** | Copy to `.claude/instructions/` |
+| **Cursor** | Copy to `.cursor/rules/` |
+| **ChatGPT / DeepSeek / Kimi** | Paste `SKILL.md` at conversation start |
+| **GitHub Copilot** | Custom instruction config |
+| **Any AI tool** | Inject `SKILL.md` as system prompt |
+
+<details>
+<summary><b>📋 Trigger phrases</b></summary>
+
+| Scenario | Trigger |
+|----------|---------|
+| Evaluate a new idea | "Use Dialectic to evaluate [XXX]" |
+| Judge need authenticity | "Is [XXX] a real need or not?" |
+| Validate a direction | "Should I pursue [XXX]?" |
+| Reverse-audit a decision | "Review my [XXX] plan for flaws" |
+| Diagnose product issues | "Why is [XXX] downloaded but not used?" |
+</details>
+
+---
+
+### ✨ v2.0 Highlights
+
+```
+v1.0 (593 lines) ──────────→ v2.0 (800 lines, +35%)
+ Single loop                       Three-gate funnel
+ Fixed ≥5 attacks                  ⚡2 / 📋3 / 🔬5 adaptive
+ Plain-text flow                   Mermaid visualization
+ Gut-feel scoring                  Behavioral anchors
+ Assumptions left "unknown"        Verification action plans
+ Tear-down only                    Positive signal counterbalance
+```
+
+| Addition | Problem Solved |
+|----------|---------------|
+| **Three-gate funnel** | Filter progressively — don't discuss feasibility when market is dubious |
+| **Depth levels** | Small decisions don't need 5 attacks; big ones won't stop at 2 |
+| **Behavioral anchors** | "Pain=6" must cite evidence, not intuition |
+| **🚦 Routing instructions** | Every gate outputs a clear "next step" |
+| **Verification action plan** | Every ⚠️❌ assumption gets a verification method + cost + timeline |
+| **Positive signals** | Counterbalances the natural skew toward "everything is false" |
+| **Design Pre-Mortem** | Gate 3: "If users churn due to UX, the top 3 reasons are…" |
+| **Skill chaining** | Design gate links to ui-ux-pro-max; completion links to writing-plans |
+
+---
+
+### 🧪 Input Quality Gate
+
+> ⚠️ Garbage in → garbage out. Methodology can't save bad inputs.
+
+| Standard | ✅ Good Input | ❌ Bad Input |
+|----------|--------------|--------------|
+| Verifiable facts | "10 users, organic, low usage" | "Users need a better tool" |
+| Specific problem | "Is AI weekly-report a real need?" | "How about an AI tool?" |
+| Open to negative results | Mentally prepared | Just looking for validation |
+| Suits logical analysis | "What are users complaining about?" | "Is this the right timing?" |
+
+```
+□ I have ≥3 verifiable facts
+□ I can state the problem in 10 words
+□ I accept "possibly a false need"
+□ This suits logical analysis (not experiment/intuition/aesthetics)
+□ If I'm wrong, I'll own it
+
+→ ≥4/5 to proceed ←
+```
+
+---
+
+### 🙏 Inspirations
+
+- **First Principles** — Aristotle, Elon Musk
+- **Adversarial Review** — legal cross-examination, scientific peer review
+- **[Council of High Intelligence](https://github.com/0xNyk/council-of-high-intelligence)** — Multi-agent deliberation framework
+- **[Superpowers](https://github.com/obra/superpowers)** — Structured workflows for AI-assisted development
+
+---
+
+### 📄 License
 
 MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
