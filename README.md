@@ -17,7 +17,7 @@
 
 [English version below ↓](#about)
 
-**驳真** 是一个从第一性原理出发，通过「解构 → 建模 → 对抗性审查 → 收敛」的循环流程，评估需求、想法或方向的真伪与市场潜力的系统化方法论。
+**驳真** 是一个从第一性原理出发，通过**三段审查漏斗**（市场验证 → 可行性评估 → 设计审查）逐级过滤产品想法的系统化方法论。每一关都遵循「解构 → 建模 → 对抗性审查 → 收敛」的循环流程。
 
 > "没有经过对抗性审查的结论，本质上还是猜测。"
 
@@ -42,16 +42,40 @@
 ## 核心流程 (Process)
 
 ```
-① 解构 (Deconstruct) → ② 建模 (Model) → ③ 对抗性审查 (Adversarial Review) → ④ 收敛 (Converge)
-                        ↑________________________________________|（循环 / Loop）
+前置：选择审查深度（⚡快速扫描 / 📋标准审查 / 🔬深度审查）
+  │
+  ▼
+┌──────────────────────────────────────────┐
+│ 第一关：市场验证 Gate                      │
+│ ① 解构 → ② 建模 → ③ 对抗性审查 → ④ 收敛  │
+│ 输出：真需求 / 弱需求 / 伪需求 / 需要更多数据 │
+└──────────────────────────────────────────┘
+  │ 通过
+  ▼
+┌──────────────────────────────────────────┐
+│ 第二关：可行性 Gate                        │
+│ ① 六维评估 → ② 对抗性审查 → ③ 收敛       │
+│ 输出：可行 / 有条件可行 / 不可行            │
+└──────────────────────────────────────────┘
+  │ 通过
+  ▼
+┌──────────────────────────────────────────┐
+│ 第三关：设计审查 Gate                      │
+│ ① 交互分析 → ② 视觉评估 → ③ 审查 → ④ 收敛 │
+│ 输出：通过 / 有条件通过 / 需重新设计         │
+└──────────────────────────────────────────┘
+  │ 通过
+  ▼
+输出：完整评估报告 → 调用 writing-plans 制定实施计划
+任一关卡失败即终止
 ```
 
 | 阶段 | 做什么 | 输出 |
 |------|--------|------|
-| **① 解构** | 把评估对象分解到不可再分的基本事实和隐藏假设，区分哪些是已知、哪些是推测，标注置信度 | 事实 vs 假设清单（每项有 ✅⚠️❌ 标记） |
-| **② 建模** | 构建一个可证伪、可衡量的评估模型。最常用的是三维模型：痛苦(Pain) × 频率(Frequency) × 替代方案不满意(Dissatisfaction)。每个维度必须能被事实推翻 | 带维度的评估框架，每项标注基于"事实"还是"假设" |
-| **③ 对抗性审查** | 强制切换立场，从辩护者变成攻击者。≥5 个独立攻击点，覆盖 ≥3 种证据类型（🔬经验/⚙️机制/🎯战略/⚖️伦理/💡启发）。Dissent Quota 强制切换正反立场。每轮通过 Novelty Gate 检验后才结束循环。最后运行 Pre-Mortem（事前验尸） | 漏洞清单 + 最致命问题标记 + 已关闭议题清单 |
-| **④ 收敛** | 基于审查结果修正模型，输出带不确定性标记的最终结论。包含少数派报告（"如果这个结论是错的，最可能的原因是什么"） | 最终判定（结论 + 不确定度 + 翻盘条件 + 少数派报告 + 后续建议） |
+| **⚡ 前置** | 根据决策的错误成本和可逆性选择审查深度：快速扫描（≥2 攻击点）、标准审查（≥3 攻击点）、深度审查（≥5 攻击点） | 审查模式锁定 + 攻击点/证据类型阈值 |
+| **第一关：市场验证** | ① 解构（事实 vs 假设）→ ② 建模（Pain × Frequency × Dissatisfaction，附行为锚点评分）→ ③ 对抗性审查（按深度参数化）→ ④ 收敛（四态结论 + 验证行动计划 + 少数派报告） | 真需求 / 弱需求 / 伪需求 / 需要更多数据 |
+| **第二关：可行性** | ① 六维评估（技术/成本/依赖/合规/设施/团队）→ ② 对抗性审查 → ③ Pre-Mortem（技术视角）→ ④ 收敛 | 可行 / 有条件可行 / 不可行 + 阻塞项清单 |
+| **第三关：设计审查** | ① 交互层评估（任务流/反馈/错误/一致/触达）→ ② 视觉层评估（层次/品牌/可读/留白）→ ③ 三视角攻击 + 设计 Pre-Mortem → ④ 收敛 | 通过 / 有条件通过 / 需重新设计 + 改进优先级 |
 
 ### 关键机制详解
 
@@ -95,11 +119,11 @@ git clone https://github.com/shahuichao24-ops/Dialectic.git ~/.agents/skills/Dia
 
 > **你**：帮我评估一下"做一个 AI 生成周报的工具"的需求真伪
 >
-> **AI（加载了 Dialectic 指令后）** 会按流程输出：
-> 1. 解构 → 列出事实（周报是制度性要求）和假设（用户对现状不满）
-> 2. 建模 → 三维评估：痛苦(2) × 频率(1) × 替代方案不满意(2) = 4/1000
-> 3. 对抗性审查 → 5 个攻击点覆盖 4 种证据类型：AI 不能替代"工作梳理"、频率致命（每周 1 次）、付费动机薄弱、巨头已占位、周报形式在衰落
-> 4. 收敛 → **结论：伪需求**。最致命问题：每周 1 次的频率无法支撑独立产品存活
+> **AI（加载了 Dialectic 指令后）** 会按三段漏斗输出：
+> 1. **前置** → 确定审查深度（小功能 → ⚡ 快速扫描）
+> 2. **第一关** → 解构 + 建模：Pain(2)×Frequency(1)×Dissatisfaction(2) = 4，弱需求信号
+> 3. **对抗性审查** → 5 个攻击点：AI 不能替代"工作梳理"、每周一次的频率无法支撑独立产品、付费动机薄弱、巨头已占位、周报形式在衰落
+> 4. **收敛** → **结论：伪需求**。最致命问题：频率致命，每周 1 次无法支撑独立产品存活。🚦 终止，不建议继续
 
 ---
 
@@ -125,6 +149,22 @@ git clone https://github.com/shahuichao24-ops/Dialectic.git ~/.agents/skills/Dia
 ```
 
 **方法论不能替代实地验证。** 如果一个问题可以通过一个简单实验来回答，永远优先做实验。
+
+---
+
+## v2.0 更新 (What's New in v2.0)
+
+相较于 v1.0 的核心优化：
+
+| 新增 | 说明 |
+|------|------|
+| **三段审查漏斗** | 市场验证 → 可行性评估 → 设计审查，逐级过滤，任一关卡被驳倒即终止 |
+| **审查深度分级** | ⚡快速扫描 / 📋标准审查 / 🔬深度审查，根据错误成本与可逆性自适应选择 |
+| **评分行为锚点** | Pain/Frequency/Dissatisfaction 每个分数都有对应行为信号，评分不再凭感觉 |
+| **验证行动计划** | 每个 ⚠️❌ 假设附带验证方法，分析不终结于"不知道" |
+| **正面信号锚定** | 5 个正面信号防止审查偏负滑向"所有需求都是假的" |
+| **🚦 流转指令** | 每关收敛后输出明确下一步，形成「评估 → 计划 → 执行」闭环 |
+| **硬编码参数化** | 所有攻击点/证据类型数字与深度表对齐，消除矛盾 |
 
 ## 输入质量标准 (Input Quality Gate)
 
@@ -170,7 +210,7 @@ MIT © 2026 shahuichao
 
 ## About (中文版见上方 ↑)
 
-Dialectic is a systematic methodology for evaluating need authenticity and market potential from first principles. It follows a four-phase loop: **Deconstruct → Model → Adversarial Review → Converge**.
+Dialectic is a systematic methodology that evaluates product ideas through a **three-gate review funnel** (Market Validation → Feasibility → Design Review). Each gate follows the same loop: **Deconstruct → Model → Adversarial Review → Converge**.
 
 > "A conclusion that hasn't survived adversarial review is still just a guess."
 
@@ -188,14 +228,14 @@ Dialectic is platform-agnostic. The complete methodology is encapsulated in `SKI
 | Reverse-audit a decision | What hidden fatal flaws does your current decision have? |
 | Diagnose product issues | Why did users download but not return? |
 
-### The Four Phases
+### The Three Gates
 
-| Phase | What you do | Output |
-|-------|-------------|--------|
-| **① Deconstruct** | Break down to irreducible facts vs. hidden assumptions. Mark confidence levels | Facts vs. assumptions inventory (✅⚠️❌) |
-| **② Model** | Build a falsifiable evaluation model. Classic: Pain × Frequency × Dissatisfaction. Every dimension must be provably wrong | Dimensioned framework labeled "fact" or "assumption" |
-| **③ Adversarial Review** | Switch from advocate to attacker. ≥5 independent attacks covering ≥3 evidence types (🔬Empirical/⚙️Mechanistic/🎯Strategic/⚖️Ethical/💡Heuristic). Dissent Quota forces perspective switching. Novelty Gate validates each loop. Pre-Mortem exercises simulate failure | Vulnerability map + most critical flaw identified |
-| **④ Converge** | Revise model based on findings. Output conclusion with uncertainty markers + minority report ("If this conclusion is wrong, the most likely reason is…") | Final verdict (conclusion + uncertainty + falsification condition + minority report + recommendation) |
+| Gate | What you do | Output |
+|------|-------------|--------|
+| **⚡ Pre-step** | Choose review depth based on error cost and reversibility: Quick Scan (≥2 attacks), Standard (≥3), Deep (≥5) | Depth mode + attack/evidence thresholds |
+| **Gate 1: Market** | ① Deconstruct (facts vs. assumptions) → ② Model (Pain × Frequency × Dissatisfaction with behavioral anchors) → ③ Adversarial Review (parameterized by depth) → ④ Converge (4-state conclusion + verification plan + minority report) | True need / Weak need / False need / Need more data |
+| **Gate 2: Feasibility** | ① Six-dimension assessment (tech/cost/dependency/compliance/infra/team) → ② Adversarial Review → ③ Pre-Mortem (tech lens) → ④ Converge | Feasible / Conditionally feasible / Infeasible + blocker list |
+| **Gate 3: Design** | ① Interaction review (task flow/feedback/errors/consistency/a11y) → ② Visual review (hierarchy/brand/readability/spacing) → ③ Three-perspective attack + Design Pre-Mortem → ④ Converge | Pass / Conditional pass / Redesign + priority fixes |
 
 ### Key Mechanisms
 
@@ -225,10 +265,10 @@ Dialectic works in **any AI tool**. No platform lock-in.
 > **You**: "Use Dialectic to evaluate whether an AI weekly-report generator is a real need."
 >
 > **AI** (with Dialectic loaded):
-> 1. **Deconstruct** → facts (reports are mandatory at many companies) vs. assumptions (users are dissatisfied)
-> 2. **Model** → Pain(2) × Frequency(1) × Dissatisfaction(2) = 4/1000
-> 3. **Adversarial Review** → 5 attacks across 4 evidence types: AI can't replace "work review" itself, fatal frequency (once/week), no willingness to pay, incumbents already there, the weekly report format itself is dying
-> 4. **Converge** → **Conclusion: weak/false need**. Fatal flaw: once-a-week frequency can't sustain an independent product
+> 1. **Pre-step** → Choose depth (small feature → ⚡ Quick Scan)
+> 2. **Gate 1** → Deconstruct + Model: Pain(2) × Frequency(1) × Dissatisfaction(2) = 4, weak need signal
+> 3. **Adversarial Review** → 5 attacks: AI can't replace "work review" itself, fatal frequency (once/week), no willingness to pay, incumbents already there, the format itself is dying
+> 4. **Converge** → **Conclusion: false need**. Fatal flaw: once-a-week frequency can't sustain an independent product. 🚦 Terminate.
 
 ### Inspirations
 
