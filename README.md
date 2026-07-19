@@ -3,18 +3,18 @@
   <p align="center">
     <b>不只是让你构建结论，而是强迫你摧毁它。</b>
     <br/>
-    <sub>从第一性原理出发的产品决策三段审查漏斗 — 任何 AI 工具即装即用</sub>
+    <sub>从第一性原理出发的产品决策对抗性审查框架（偏见检测系统）— 任何 AI 工具即装即用</sub>
   </p>
   <p align="center">
-    <img src="https://img.shields.io/badge/version-2.0-3C3489?style=flat-square" alt="v2.0">
+    <img src="https://img.shields.io/badge/version-2.1-3C3489?style=flat-square" alt="v2.1">
     <img src="https://img.shields.io/badge/license-MIT-1D9E75?style=flat-square" alt="MIT">
     <img src="https://img.shields.io/badge/platform-AI%20agnostic-534AB7?style=flat-square" alt="AI agnostic">
-    <img src="https://img.shields.io/badge/lines-800-888780?style=flat-square" alt="800 lines">
+    <img src="https://img.shields.io/badge/lines-824-888780?style=flat-square" alt="824 lines">
   </p>
   <p align="center">
     <a href="#快速上手-quick-start">⚡ 快速上手</a> ·
     <a href="#核心流程">📋 核心流程</a> ·
-    <a href="#v20-更新">✨ v2.0</a> ·
+    <a href="#v21-更新">✨ v2.1</a> ·
     <a href="#about">🇬🇧 English</a>
   </p>
 </p>
@@ -25,6 +25,7 @@
 > **Dialectic 教你："假设你是错的，然后证明为什么错。"**
 >
 > 这是两者之间最本质的差距。没有经过对抗性审查的结论，本质上还是猜测。
+> 而通过了对抗性审查的需求，也不等于值得做——它只是**还没被证伪**。
 
 ---
 
@@ -50,22 +51,22 @@
 
 <blockquote>
 
-**⚡ 前置**：小功能、可逆 → 选择快速扫描（2 个攻击点即可）
+**⚡ 前置**：三问速筛 → 三问全过则直接决策；任一"建议走"则进入完整流程。小功能、可逆 → 选快速扫描（2 个攻击点即可）
 
-**第一关 · 市场验证**
+**第一关 · 需求信号检测**
 
 | 步骤 | 内容 |
 |------|------|
 | ① 解构 | ✅ 周报是制度性要求 | ⚠️ 用户对写周报感到痛苦？ | ❌ 用户愿意为解决方案付费 |
 | ② 建模 | Pain(2) × Frequency(1) × Dissatisfaction(2) = **4 → 伪需求信号** |
 | ③ 审查 | 🔬 AI 不能替代"梳理工作"这步 | 💡 每周 1 次的频率无法支撑产品存活 | 🎯 ChatGPT 输入框就能做 |
-| ④ 收敛 | **结论：伪需求** 🛑 | 最致命：频率致命 | 少数派报告：如果企业强制要求用 AI 工具写周报…… |
+| ④ 收敛 | **结论：伪需求** ⏸ 搁置 | 最致命：频率致命 | 复活条件：除非"企业强制要求用 AI 工具写周报"且可观测，否则不继续 |
 
-**🚦 终止。不建议继续投入。**
+**🚦 搁置（附复活条件）。不建议当前投入，但留好重新评估的触发器。**
 
 </blockquote>
 
-> **30 分钟 vs 6 个月** — 正确的问题不需要正确答案，需要正确的问题被及时否决。
+> **30 分钟 vs 6 个月** — 正确的问题不需要正确答案，需要正确的问题被及时否决（或在时机未到时被妥善搁置）。
 </details>
 
 ---
@@ -73,6 +74,10 @@
 ## 📋 核心流程
 
 ```
+         ⚡ 前置：三问速筛（默认入口，3 分钟）
+        （三问全过 → 直接决策 / 任一"建议走" → 进完整流程）
+                    │
+                    ▼
          ⚡ 前置：选择审查深度
         （快速扫描 / 标准审查 / 深度审查）
                     │
@@ -85,23 +90,23 @@
                     │
                     ▼
      ┌─────────────────────────────┐
-     │  🔍 第一关：市场验证           │
+     │  🔍 第一关：需求信号检测       │
      │  是真需求还是自己骗自己？       │
      │  ① 解构 → ② 建模 → ③ 审查 → ④ 收敛 │
      │  → 真需求 / 弱需求 / 伪需求 / 需要更多数据 │
      └─────────────┬───────────────┘
-                   │ 真需求 ✅
+                   │ 信号足够 ✅
                    ▼
      ┌─────────────────────────────┐
-     │  🛠️ 第二关：可行性           │
+     │  🛠️ 第二关：实现条件扫描       │
      │  能做吗？值得做吗？有什么坑？    │
      │  ① 六维评估 → ② 审查 → ③ 收敛  │
      │  → 可行 / 有条件可行 / 不可行   │
      └─────────────┬───────────────┘
-                   │ 可行 ✅
+                   │ 条件满足 ✅
                    ▼
      ┌─────────────────────────────┐
-     │  🎨 第三关：设计审查          │
+     │  🎨 第三关：体验一致性校验      │
      │  交互顺吗？视觉对吗？           │
      │  ① 交互 → ② 视觉 → ③ 审查 → ④ 收敛 │
      │  → 通过 / 有条件通过 / 需重新设计  │
@@ -114,13 +119,13 @@
 
 ### 三道关卡速查
 
-| 关卡 | 回答什么问题 | 不通过后果 |
+| 关卡 | 回答什么问题 | 信号不足后果 |
 |------|------------|-----------|
-| 🔍 **市场验证** | 有人真的需要这个吗？ | 🛑 终止。不用讨论后面 |
-| 🛠️ **可行性** | 技术上能实现吗？成本可控吗？ | 🛑 终止。再好的需求做不了也没用 |
-| 🎨 **设计审查** | 交互和视觉是否匹配产品定位？ | ⚠️ 修复后重新审查 |
+| 🔍 **需求信号检测** | 有人真的需要这个吗？ | ⏸ 搁置（附复活条件）。信号弱不意味着永远不做 |
+| 🛠️ **实现条件扫描** | 技术上能实现吗？成本可控吗？ | ⏸ 搁置（附复活条件）。条件不成熟 |
+| 🎨 **体验一致性校验** | 交互和视觉是否匹配产品定位？ | ⚠️ 修复后重新审查 |
 
-> 💡 **任一关卡被驳倒，后续关卡自动终止。** 不要在"市场都不一定存在"的前提下讨论"用什么技术栈"。
+> 💡 **任一关卡信号不足 → 输出「搁置 + 复活条件」（可观测触发器 + 复核日期），而非一票否决。** 好创意常因"时机未到"被搁置，而非"被证伪"。
 
 ---
 
@@ -135,17 +140,19 @@
 | 💀 **Pre-Mortem** | 假设 12 个月后惨败，最可能的 3 个死因是什么？ |
 | 📝 **Minority Report** | 即使结论确认，也记录"如果错了，最可能是因为……" |
 
+> **v2.1 新增机制**：🛡️ **META-GATE**（承认框架自身也可废止）+ ⚡ **三问速筛**（默认轻量入口）+ ⏸ **复活条件**（搁置而非终止）+ 🟢 **正面信号内嵌 HARD-GATE**（≥3 信号强制攻击点 +1）
+
 ---
 
 ## 🔧 在任何 AI 工具中使用
 
-Dialectic 是一份 **800 行的纯文本指令文件** (`SKILL.md`)，不依赖任何框架或平台。
+Dialectic 是一份 **824 行的纯文本指令文件** (`SKILL.md`)，不依赖任何框架或平台。
 
 ### 一行命令安装
 
 ```bash
-# ZCode
-git clone https://github.com/shahuichao24-ops/Dialectic.git ~/.agents/skills/Dialectic
+# 克隆到技能目录
+git clone https://github.com/shahuichao24-ops/Dialectic-skill.git ~/.agents/skills/Dialectic
 
 # 然后直接说中文即可：
 # "帮我用驳真评估一下XXX"
@@ -200,6 +207,28 @@ v1.0 (593 行) ──────────────→ v2.0 (800 行, +35%
 
 ---
 
+## ✨ v2.1 更新
+
+```
+v2.0 (800 行) ──────────────→ v2.1 (824 行)
+三段审查漏斗                      偏见检测系统（重新定位）
+终止即关闭通道                    搁置 + 复活条件
+推翻权限宽松（1 理由可跳过）        证据 + 期限重审（临时可收回）
+无轻量入口                        三问速筛默认入口
+正面信号只是建议                  正面信号内嵌 HARD-GATE（≥3 则攻击点 +1，强制）
+```
+
+| 改动 | 为什么 |
+|------|--------|
+| **重新定位：偏见检测系统** | 元评估发现原"判定框架"定位导致自指悖论——要求一切结论经过审查，却无法审查自身。改为"暴露盲区、对抗确认偏误"的检测系统，悖论自消解 |
+| **META-GATE 元声明** | 开头声明"驳真也可能错、本身在迭代"，并给出可废止的推翻权限（需具体证据 + 期限），防止框架沦为僵化教条或逃避审查的后门 |
+| **搁置替代终止** | 每个负面结论不再"判死刑"，而是输出「可观测触发器 + 复核日期」的复活条件——好创意因时机未到而被搁置，而非被证伪 |
+| **三问速筛（默认入口）** | 800 行门槛太高。3 个问题 3 分钟判断值不值得走完整流程，降低使用门槛；并修正了"有人反对→跳过"的逻辑错误（应为"必须走"） |
+| **正面信号内嵌 HARD-GATE** | ≥3 信号时攻击点 +1（强制规则），并新增第 6 条带硬标准（可量化 = 有历史/可观测基线），对抗"过度驳回" |
+| **核心原则 13→16** | 新增可废止性、不输出停止、三问优先；修正"对抗性审查只能揭示假、不能证明真" |
+
+---
+
 ## 🧪 输入质量门控
 
 > ⚠️ 垃圾进 → 垃圾出。不管你用了什么方法论。
@@ -246,6 +275,7 @@ MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
 > **Dialectic teaches you: "Assume you're wrong, then prove why."**
 >
 > That's the fundamental gap. A conclusion that hasn't survived adversarial review is still just a guess.
+> And a need that survived adversarial review isn't proven real — it's merely **not yet falsified**.
 
 ---
 
@@ -271,22 +301,22 @@ MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
 
 <blockquote>
 
-**⚡ Pre-step**: Small idea, reversible → Quick Scan (≥2 attacks)
+**⚡ Pre-step**: Three-Question Screen → all pass = decide now; any "recommend full" = run full flow. Small idea, reversible → Quick Scan (≥2 attacks)
 
-**Gate 1 · Market Validation**
+**Gate 1 · Need Signal Detection**
 
 | Step | Finding |
 |------|---------|
 | ① Deconstruct | ✅ Reports are mandatory | ⚠️ Users hate writing them? | ❌ Users will pay? |
 | ② Model | Pain(2) × Frequency(1) × Dissatisfaction(2) = **4 → false need signal** |
 | ③ Review | 🔬 AI can't replace "work reflection" | 💡 Once/week can't sustain a product | 🎯 ChatGPT already does this |
-| ④ Converge | **Verdict: false need** 🛑 | Fatal: frequency kills it | Minority report: unless companies mandate AI tools… |
+| ④ Converge | **Verdict: false need** ⏸ Hold | Fatal: frequency kills it | Revival: unless "companies mandate AI tools" + observable, don't proceed |
 
-**🚦 Terminate. Do not proceed.**
+**🚦 Hold (with revival conditions). Don't invest now, but keep the trigger for re-evaluation.**
 
 </blockquote>
 
-> **30 minutes vs 6 months** — The right question doesn't need the right answer. It needs to be killed quickly if it's wrong.
+> **30 minutes vs 6 months** — The right question doesn't need the right answer. It needs to be killed quickly if it's wrong (or held properly if the timing is off).
 </details>
 
 ---
@@ -294,6 +324,10 @@ MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
 ### 📋 Core Process
 
 ```
+         ⚡ Pre-step: Three-Question Screen (default entry, 3 min)
+        (all pass → decide now / any "recommend full" → run full flow)
+                    │
+                    ▼
          ⚡ Pre-step: Choose review depth
         (Quick Scan / Standard / Deep)
                     │
@@ -306,12 +340,12 @@ MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
                     │
                     ▼
      ┌─────────────────────────────┐
-     │  🔍 Gate 1: Market           │
+     │  🔍 Gate 1: Need Signal       │
      │  Is this a real need?        │
      │  ① Deconstruct → ② Model → ③ Review → ④ Converge │
      │  → True / Weak / False / Need more data            │
      └─────────────┬───────────────┘
-                   │ True need ✅
+                   │ Signal strong enough ✅
                    ▼
      ┌─────────────────────────────┐
      │  🛠️ Gate 2: Feasibility      │
@@ -319,7 +353,7 @@ MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
      │  ① 6-Dim Assessment → ② Review → ③ Converge │
      │  → Feasible / Conditional / Infeasible       │
      └─────────────┬───────────────┘
-                   │ Feasible ✅
+                   │ Conditions met ✅
                    ▼
      ┌─────────────────────────────┐
      │  🎨 Gate 3: Design Review    │
@@ -335,13 +369,13 @@ MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
 
 #### Gate Quick Reference
 
-| Gate | Answers | If Failed |
+| Gate | Answers | If Signal Weak |
 |------|---------|-----------|
-| 🔍 **Market** | Does anyone actually need this? | 🛑 Stop. Don't discuss feasibility |
-| 🛠️ **Feasibility** | Can we build it? Cost? Risk? | 🛑 Stop. Great ideas die on bad feasibility |
+| 🔍 **Need Signal** | Does anyone actually need this? | ⏸ Hold (+ revival conditions). Weak ≠ never |
+| 🛠️ **Feasibility** | Can we build it? Cost? Risk? | ⏸ Hold (+ revival conditions). Conditions not ripe |
 | 🎨 **Design** | Does UX match product positioning? | ⚠️ Fix and re-review |
 
-> 💡 **Any gate that fails terminates the funnel.** Don't discuss "which tech stack" when the market doesn't even exist.
+> 💡 **Any gate with weak signal → output "Hold + revival conditions" (observable trigger + review date), not a veto.** Good ideas are often held for "bad timing", not "proven false".
 
 ---
 
@@ -356,15 +390,17 @@ MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
 | 💀 **Pre-Mortem** | Fast-forward 12 months — we failed catastrophically. Top 3 causes? |
 | 📝 **Minority Report** | Even in the final verdict: "If this is wrong, the most likely reason is…" |
 
+> **v2.1 new**: 🛡️ **META-GATE** (the framework itself is falsifiable) + ⚡ **Three-Question Screen** (default light entry) + ⏸ **Revival Conditions** (hold, not terminate) + 🟢 **Positive Signals in HARD-GATE** (≥3 → attacks +1, forced)
+
 ---
 
 ### 🔧 Use with Any AI Tool
 
-Dialectic is an **800-line plain-text instruction file** (`SKILL.md`). Platform-agnostic. No dependencies.
+Dialectic is an **824-line plain-text instruction file** (`SKILL.md`). Platform-agnostic. No dependencies.
 
 ```bash
 # One-line install
-git clone https://github.com/shahuichao24-ops/Dialectic.git ~/.agents/skills/Dialectic
+git clone https://github.com/shahuichao24-ops/Dialectic-skill.git ~/.agents/skills/Dialectic
 
 # Then say in natural language:
 # "Use Dialectic to evaluate [XXX]"
@@ -414,6 +450,28 @@ v1.0 (593 lines) ──────────→ v2.0 (800 lines, +35%)
 | **Positive signals** | Counterbalances the natural skew toward "everything is false" |
 | **Design Pre-Mortem** | Gate 3: "If users churn due to UX, the top 3 reasons are…" |
 | **Skill chaining** | Design gate links to ui-ux-pro-max; completion links to writing-plans |
+
+---
+
+### ✨ v2.1 Highlights
+
+```
+v2.0 (800 lines) ──────────→ v2.1 (824 lines)
+ Three-gate funnel                  Bias-detection system (repositioned)
+ Terminate = close channel          Hold + revival conditions
+ Loose override (1 reason)          Evidence + time-boxed override
+ No light entry                     Three-Question Screen (default)
+ Positive signals = suggestion      Positive signals in HARD-GATE (≥3 → +1, forced)
+```
+
+| Change | Why |
+|--------|-----|
+| **Reposition: bias-detection system** | Meta-review found the "judge framework" framing caused a self-reference paradox — it demanded all conclusions be reviewed yet couldn't review itself. Reframed as "expose blind spots, fight confirmation bias" — paradox dissolves |
+| **META-GATE declaration** | Opens by stating "Dialectic can be wrong, is itself iterating", with a falsifiable override (needs concrete evidence + time-box) — prevents dogma or an escape hatch |
+| **Hold instead of Terminate** | Negative verdicts no longer "execute" — they output revival conditions (observable trigger + review date). Good ideas are held for timing, not proven false |
+| **Three-Question Screen (default)** | 800 lines is a high bar. 3 questions in 3 min decide whether the full flow is worth it; also fixes the "opposition → skip" logic bug (should be "must run") |
+| **Positive signals in HARD-GATE** | ≥3 signals → attacks +1 (forced rule); adds signal #6 with a hard standard (quantifiable = has historical/observable baseline) to fight "over-rejection" |
+| **Core principles 13→16** | Adds falsifiability, "don't output stop", three-question-first; corrects "adversarial review reveals false, doesn't prove true" |
 
 ---
 
