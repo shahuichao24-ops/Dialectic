@@ -1,14 +1,13 @@
 <p align="center">
   <h1 align="center">🛡️ 驳真 · Dialectic</h1>
   <p align="center">
-    <b>30 秒替你找破绽，30 天陪你见真章。</b><br/>
-    <sub>在拍板“做不做”前做一次极限压力测试，到期后让时间裁决输赢。</sub>
+    <b>拍板“做不做”前的 30 秒极限压力测试。</b><br/>
+    <sub>在写下第一行代码前做一次极限压力测试，拒绝无脑捧场，否定必给生路。</sub>
   </p>
   <p align="center">
-    <img src="https://img.shields.io/badge/version-4.0.1-black?style=flat-square" alt="v4.0.1">
-    <img src="https://img.shields.io/badge/mcp-supported-brightgreen?style=flat-square" alt="MCP Supported">
-    <img src="https://img.shields.io/badge/prompt-~2.4k%20tokens-blue?style=flat-square" alt="~2.4k tokens">
-    <img src="https://img.shields.io/badge/tests-27%2F27%20passed-success?style=flat-square" alt="27/27 Tests Passed">
+    <img src="https://img.shields.io/badge/version-5.0.0-black?style=flat-square" alt="v5.0.0">
+    <img src="https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square" alt="Zero Dependencies">
+    <img src="https://img.shields.io/badge/prompt-~1.2k%20tokens-blue?style=flat-square" alt="~1.2k tokens">
     <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT">
   </p>
   <p align="center">
@@ -24,52 +23,54 @@
 
 **驳真 (Dialectic) 是一个专为你挑方案死穴的“AI 挑刺合伙人”。**
 
-就像苹果在产品立项时反复推敲“这个东西到底该不该存在”一样——驳真在你写下第一行代码、投入研发资源之前，对你的方案做一次**极限压力测试**。
+主流大模型几乎全是“奉承大师”，无论你说什么方案都顺着夸“太棒了、很有前景”。  
+但在真实商业与产品立项中，**最昂贵的成本不是代码写得慢，而是做了一个根本没人要的伪需求。**
 
-- **拒绝无脑捧场**：主流的大模型几乎全是“奉承大师”，无论你说什么都回答“太棒了”；驳真不当应声虫，它会像挑剔的设计评审一样，直接指出你的方案最薄弱的死穴。
-- **好方案大方放行**：对低成本、高确定性的好方案直接放行 (`PASS`)，绝不为了显摆深刻而无病呻吟。
-- **否定必给生路**：如果否定你的方案，必须给出一个仅需 1/10 成本试水的备选方案，绝不只挑刺不给解法。
-- **立字据对赌验证**：随手回复一句“打个赌 7天”，AI 就会立下预测契约；观察期结束后，一起回头看看当初究竟谁被时间打脸。
-
----
-
-### 2. 使用场景是什么？
-
-它只帮你回答一个最昂贵的问题：**“这个需求/功能，到底做不做？”**
-
-| 场景 | 典型困境 | 驳真能帮你做什么 |
-|---|---|---|
-| 🛠️ **独立开发防自嗨** | 突然冒出个点子想做个复杂功能（如打卡积分系统） | 30 秒泼冷水，深扒竞品真实差评，测出是不是伪需求，省下两周无效编码。 |
-| 🏢 **方案上会与跨部门评审** | 方案要推给领导或跨部门评审，心里没底 | 站在利益受损者视角刁钻推演：“动了谁的奶酪”、“出事谁背锅”，备齐所有应对退路。 |
-| 🧪 **全新概念无先例探索** | 全新交互或创意，市面上缺乏现成数据参考 | 启动【创新沙盒】，不因缺乏数据一棍子打死，给出 1/10 成本的最小验证闭环。 |
-
-> ⚠️ **严禁使用场景（自动退出）**：常规文档审校、找错别字、代码审查 (Code Review)、写具体代码。遇到这些会直接退出，交由常规通用助理处理。
+驳真在你投入任何研发资源、写下第一行代码之前，对你的想法做一次**残酷但理性的极限压力测试**：
+- **拒绝捧场应声虫**：像挑剔的设计与业务评审一样，30 秒直击方案最薄弱的死穴。
+- **好方案大方放行 (PASS)**：对低成本、高确定性的好方案直接放行，绝不为了显摆深刻而无病呻吟。
+- **否定必给生路**：只要否定原方案，必须提炼底层核心诉求，给出一个仅需 **1/10 成本试水**的替代方案。
 
 ---
 
-### 3. 怎么安装与使用？
+### 2. 标准输出长什么样？
 
-#### 方式 A：零代码开箱即用（极力推荐 · 适合所有人）
-**不需要装任何环境，10 秒搞定：**
-1. 打开本仓库的 [`SKILL.md`](SKILL.md)，复制全部文本；
-2. 粘贴到你的 **Cursor Rules**、**Claude Project**、**ChatGPT 自定义指令** 或 **Antigravity 技能库** 中；
-3. 平时像说话一样提问（例如：*“我想在小工具里加个每日打卡功能提高日活，帮我做个方案压力测试”*），立刻开始审查！
+一屏读完，30 秒直面真相，绝不废话：
 
-#### 方式 B：本地极客 & MCP 增强（全自动记账与战绩看板）
-如果你想体验本地自动排查逾期坏账、自动落盘防篡改台账与命令行看板：
-
-```bash
-# 1. 克隆并编译
-git clone https://github.com/shahuichao24-ops/Dialectic-skill.git
-cd Dialectic-skill && npm install && npm run build
-npm link                           # 可选：全局注册 dialectic 终端命令
-
-# 2. 常用命令（亦可使用全局 dialectic <命令>）
-node ./dist/cli.js init            # 自动为当前项目生成 Cursor MCP 配置
-node ./dist/cli.js board --card    # 查看 AI 预测命中率与对决看板
-node ./dist/cli.js dossier <ID>    # 导出单页【方案压力测试备忘录】(可直接贴入 PRD 决策章节)
-node ./dist/cli.js scout <URL>     # 嗅探竞品网页核心正文 (内置 SSRF 内网安全隔离)
+```markdown
+# 🔪 [功能必要 ｜ 组织阻力 ｜ 战略方向 ｜ 合规红线] 审查：[方案名称]
+- 一句话结论：[大方通过 (PASS) ｜ 建议放弃 ｜ 小步快跑 ｜ 暂缓立项 / 补齐证据] ｜ 更好做法：[...]
+- 别人踩过的坑 (全自动搜寻)：[自动嗅探检索到的代表竞品真实差评与痛点事实]
+- 三句大实话：
+  1. 谁吃亏：给谁添麻烦，会不会表面配合私下糊弄；
+  2. 卡在哪：不做业务是否卡死，做砸几天能恢复；
+  3. 出事谁背锅：自己能扛还是直接被罚停。
+- 💡 更省钱省事的做法：[如果不做原方案，怎么花 1/10 的成本试水]
 ```
+
+---
+
+### 3. 四大不可妥协的底线
+
+1. **Gate 0 误触即退**：常规文档审校、找错别字、代码审查 (Code Review)、代码编写等执行任务，**坚决不触发驳真**，直接转由常规助理角色处理。
+2. **Gate 1 先顾人再顾事**：察觉用户疲惫或明确叫停（如“别驳我”）立刻退出，不追问、不输出卡片。
+3. **Gate 2 好方案大方放行**：对低成本可逆、证据确凿的好方案大方 PASS，绝不抬杠。
+4. **Gate 3 否定必给生路**：拒绝无建设性的泼冷水，否定必附带 1/10 成本验证方案。
+
+---
+
+### 4. 怎么使用？（零依赖 · 10 秒上手）
+
+**纯提示词框架，无须安装任何环境或依赖：**
+
+1. 打开本仓库的 [`SKILL.md`](SKILL.md)，复制全部文本；
+2. 粘贴到你的任意 AI 环境中：
+   - **Cursor / Windsurf Rules**（工作区或全局规则）
+   - **Claude Project**（项目知识库 / 自定义说明）
+   - **ChatGPT Custom Instructions**（自定义指令 / GPTs）
+   - **Google Antigravity / OpenClaw 技能库**
+3. 平时像正常聊天一样抛出你的点子：
+   > *“我想给我的小工具加个每日打卡积分系统提高次留，帮我做个方案压力测试。”*
 
 ---
 
@@ -79,54 +80,51 @@ node ./dist/cli.js scout <URL>     # 嗅探竞品网页核心正文 (内置 SSRF
 
 **Dialectic is an adversarial "Idea Challenger" AI designed to stress-test your product decisions.**
 
-Just like Steve Jobs challenging every feature with *"Why does this matter?"* — Dialectic puts your proposals through an uncompromising **stress test** before you write a single line of code or burn engineering hours.
+Mainstream LLMs are echo chambers. Whatever feature you propose, they praise it with *"Great idea!"* or *"Huge potential!"*.  
+In real-world product development, **the most expensive mistake isn't slow coding — it's building something nobody actually wants.**
 
-- **No Sycophantic Flattery**: Mainstream LLMs are echo chambers that praise every idea. Dialectic refuses to be a yes-man; it acts like a rigorous design reviewer, exposing the fatal blind spots in your plan.
-- **Clear Approval for Good Ideas**: Approves low-cost, high-conviction ideas with an immediate `PASS`. No bikeshedding just to look smart.
-- **Mandatory Fallback**: Every rejection must come with a 1/10-cost low-risk alternative. Never just a "no" without a way forward.
-- **Accountable Bets**: Simply reply *"bet 7 days"*, and Dialectic logs a falsifiable prediction into your local ledger. When the window ends, see whether the AI or your intuition was right.
-
----
-
-### 2. When to use it?
-
-Dialectic focuses strictly on the single most expensive question in product building: **"Should we build this, or not?"**
-
-| Scenario | Pain Point | How Dialectic Helps |
-|---|---|---|
-| 🛠️ **Solo Indie Hackers** | Falling in love with vanity features (e.g., daily check-in points). | 30-second cold-water test. Digs into competitor user complaints to prevent weeks of wasted coding. |
-| 🏢 **B2B Product Reviews** | Unsure if a proposal will survive stakeholder meetings. | Stresses "Friction" (who bears the burden?) and "Compliance" (who takes the blame?), preparing solid defenses. |
-| 🧪 **Zero-to-One Concepts** | Brand-new interactions with zero market data available. | Activates the "Innovation Sandbox" to design a 1/10-cost experiment without prematurely killing innovation. |
-
-> ⚠️ **Out of Scope (Auto-Exit)**: Proofreading, Code Review, bug fixing, or writing implementation code. The framework exits immediately to standard assistant mode.
+Dialectic subjects your proposal to a rigorous **30-second stress test** before you burn engineering hours:
+- **Zero Sycophantic Flattery**: Refuses to be a yes-man; exposes fatal blind spots like a demanding design and business reviewer.
+- **Clear Approval for Good Ideas (PASS)**: Approves low-cost, high-conviction ideas immediately. No nitpicking just to appear smart.
+- **Mandatory Fallback Solution**: Every rejection must come with an actionable alternative that tests the core hypothesis at **1/10 of the original cost**.
 
 ---
 
-### 3. How to install & use?
+### 2. Standard Output
 
-#### Method A: Zero-Code Prompt (Recommended for Everyone)
-**No installation needed. Ready in 10 seconds:**
-1. Copy the full content of [`SKILL.md`](SKILL.md);
-2. Paste it into your **Cursor Rules**, **Claude Project Instructions**, **ChatGPT Custom Instructions**, or **Antigravity Skills**;
-3. Ask your idea naturally (e.g., *"I want to add a daily streak system to my desktop tool, stress-test it for me"*).
+Read in one screen, clear and actionable:
 
-#### Method B: Local CLI & MCP Engine (Automated Ledger & Dashboards)
-For local deterministic tracking, tamper-proof state machines, and terminal dashboards:
-
-```bash
-# 1. Clone & Build
-git clone https://github.com/shahuichao24-ops/Dialectic-skill.git
-cd Dialectic-skill && npm install && npm run build
-npm link                           # Optional: globally link the `dialectic` command
-
-# 2. CLI Commands (or use global `dialectic <command>`)
-node ./dist/cli.js init            # Generate Cursor MCP configuration
-node ./dist/cli.js board --card    # View hit-rate battle cards
-node ./dist/cli.js dossier <ID>    # Export a 1-page Stress-Test Memo (pasteable into PRDs)
-node ./dist/cli.js scout <URL>     # Extract competitor facts (with SSRF security)
+```markdown
+# 🔪 [Necessity ｜ Friction ｜ Direction ｜ Compliance] Review: [Feature Name]
+- Verdict: [PASS ｜ Drop It ｜ Small Step ｜ Hold / Needs Proof] ｜ Better Way: [...]
+- Traps Others Fell Into: [Real user complaints and churn reasons scraped from competitor tools]
+- Three Hard Truths:
+  1. Who bears the burden: Whose workflow is disrupted? Will they secretly work around it?
+  2. Where does it choke: If skipped, does business stop? If ruined, recovery time?
+  3. Who takes the blame: Can you absorb the blow, or does it trigger regulatory shutdown?
+- 💡 1/10 Cost Alternative: [How to test this value proposition with minimal resources]
 ```
 
 ---
 
-## 📄 License
-MIT © 2026 [shahuichao](https://github.com/shahuichao24-ops)
+### 3. Four Non-Negotiable Gates
+
+1. **Gate 0: Mis-trigger Guard**: For doc review, typo correction, code reviews, or writing code, **Dialectic exits immediately** and lets standard assistants handle it.
+2. **Gate 1: Empathy First**: If the user is exhausted or asks to stop (e.g., *"don't challenge me, just write code"*), exit silently.
+3. **Gate 2: Generous Pass for Solid Ideas**: Low-cost, reversible, well-evidenced ideas get an immediate `PASS`.
+4. **Gate 3: Constructive Rejection**: Never criticize without a way forward. Every rejection must offer a 1/10 cost alternative.
+
+---
+
+### 4. How to Use (Zero Dependencies · 10 Seconds)
+
+**Pure markdown skill. No local runtime or setup required:**
+
+1. Copy the contents of [`SKILL.md`](SKILL.md);
+2. Paste it into your AI environment:
+   - **Cursor / Windsurf Rules**
+   - **Claude Project Instructions**
+   - **ChatGPT Custom Instructions / GPTs**
+   - **Google Antigravity / OpenClaw Skills**
+3. Talk naturally:
+   > *"I want to add a daily streak and loyalty points system to my app to boost retention. Give me an adversarial stress test on this proposal."*
