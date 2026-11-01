@@ -25,19 +25,12 @@ In real-world software engineering, **writing code slowly rarely kills a product
 ## Workflow
 
 ```mermaid
-flowchart TD
-    Start["User Prompt / Feature Proposal"] --> Check{"Intent Routing"}
-    
-    Check -->|"Routine Execution<br>(Proofreading / Code Review / Typo Fix)"| Gate0["🚫 Gate 0 · Mis-Trigger Guard<br>Exit immediately & act as standard assistant"]
-    
-    Check -->|"Decision Evaluation<br>('Should we build it?' / 'Find fatal flaws')"| Gate1{"🔍 Gate 1 · Empathy Check<br>User fatigued or instructed 'don't challenge me'?"}
-    
-    Gate1 -->|"Yes"| Exit["Step aside silently without friction"]
-    Gate1 -->|"No"| Search["🌐 Proactive Competitor Review<br>Mine churn facts: [Competitor] + 'drawbacks/bad reviews'"]
-    
-    Search --> Lenses["🎯 Four Review Lenses<br>Necessity ｜ Friction ｜ Compliance ｜ Innovation"]
-    
-    Lenses --> Deliver["⚡ 30-Second Verdict Card<br>Verdict ｜ Competitor Traps ｜ Three Truths ｜ 1/10 Fallback"]
+flowchart LR
+    In["1. Proposal Pitch"] --> Guard{"Gate 0 & 1"}
+    Guard -->|"Direction & Pitch"| Mine["2. Proactive Mining<br>Live competitor churn search"]
+    Mine --> Lenses["3. Four Lenses<br>Necessity · Friction · Compliance · Innovation"]
+    Lenses --> Out["4. 30s Decision Card<br>Verdict · Three Truths · 1/10 Fallback"]
+    Guard -.->|"Routine Task / Opt-out"| Exit["Silent Exit / Normal Assistant"]
 ```
 
 ## Output Anatomy
