@@ -22,6 +22,24 @@ In real-world software engineering, **writing code slowly rarely kills a product
 - **Generous PASS** · Instantly approves low-cost, reversible, well-evidenced ideas. No nitpicking.
 - **1/10 Cost Fallback** · Never rejects without offering a lightweight validation path at 10% of the cost.
 
+## Workflow
+
+```mermaid
+flowchart TD
+    Start["User Prompt / Feature Proposal"] --> Check{"Intent Routing"}
+    
+    Check -->|"Routine Execution<br>(Proofreading / Code Review / Typo Fix)"| Gate0["🚫 Gate 0 · Mis-Trigger Guard<br>Exit immediately & act as standard assistant"]
+    
+    Check -->|"Decision Evaluation<br>('Should we build it?' / 'Find fatal flaws')"| Gate1{"🔍 Gate 1 · Empathy Check<br>User fatigued or instructed 'don't challenge me'?"}
+    
+    Gate1 -->|"Yes"| Exit["Step aside silently without friction"]
+    Gate1 -->|"No"| Search["🌐 Proactive Competitor Review<br>Mine churn facts: [Competitor] + 'drawbacks/bad reviews'"]
+    
+    Search --> Lenses["🎯 Four Review Lenses<br>Necessity ｜ Friction ｜ Compliance ｜ Innovation"]
+    
+    Lenses --> Deliver["⚡ 30-Second Verdict Card<br>Verdict ｜ Competitor Traps ｜ Three Truths ｜ 1/10 Fallback"]
+```
+
 ## Output Anatomy
 
 One screen. 30 seconds. Zero fluff.
