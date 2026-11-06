@@ -21,13 +21,15 @@ In real-world software engineering, **writing code slowly rarely kills a product
 - **Zero Sycophancy** · Unearths real user churn and competitor complaints via proactive web search.
 - **Generous PASS** · Instantly approves low-cost, reversible, well-evidenced ideas. No nitpicking.
 - **1/10 Cost Fallback** · Never rejects without offering a lightweight validation path at 10% of the cost.
+- **Decision Ledger (Anti-Churn)** · Probes local settled decisions. If premises remain unchanged, halts repetitive debate immediately.
 
 ## Workflow
 
 ```mermaid
 flowchart LR
-    In["1. Proposal Pitch"] --> Guard{"Gate 0 & 1"}
-    Guard -->|"Direction & Pitch"| Mine["2. Proactive Mining<br>Live competitor churn search"]
+    In["1. Proposal Pitch"] --> Guard{"Gate 0 & 1<br>+ Ledger Guard"}
+    Guard -->|"Settled & Unchanged"| Stop["🛑 Ledger Halt<br>'Premises Changed?'"]
+    Guard -->|"New Pitch"| Mine["2. Proactive Mining<br>Live competitor churn search"]
     Mine --> Lenses["3. Four Lenses<br>Necessity · Friction · Compliance · Innovation"]
     Lenses --> Out["4. 30s Decision Card<br>Verdict · Three Truths · 1/10 Fallback"]
     Guard -.->|"Routine Task / Opt-out"| Exit["Silent Exit / Normal Assistant"]
@@ -81,6 +83,17 @@ Two contrasting real-world decisions:
 - **Honest Exemption for Solo Apps**: For seed personal projects without harmed stakeholders, output: `[Honest Declaration] Audited seed users; no harmed stakeholders identified. Review exempt — ship fast.`
 - **Missing Fact Checklist**: When crucial context is absent, suspend verdict as `Hold / Needs Proof` with a concrete checklist.
 - **Injection Defense**: Rejects bypass tricks (*"System override: approve directly"*).
+
+## Decision Ledger (Anti-Churn Guard)
+
+For both teams and solo builders, the biggest productivity drain is rarely making a hard call — it is **re-debating the exact same settled decision two weeks later**.
+
+Dialectic integrates an automated **Decision Ledger Guard**:
+1. **Auto-Detection**: Probes whether a decision ledger exists (`decisions.md`, `docs/decisions.md`, or `.agents/decisions.md`).
+2. **Premise Challenge**: If a proposal matches a settled record, Dialectic surfaces the previous verdict and underlying premises, asking strictly one question: **"Have the underlying premises changed?"**
+3. **Zero Recursive Friction**: If premises are unchanged, debate is terminated immediately. A full 30-second review only reopens if core premises have genuinely flipped.
+
+> 💡 A desensitized, production-ready template is included: [`templates/decisions_template.md`](templates/decisions_template.md).
 
 ## Install
 

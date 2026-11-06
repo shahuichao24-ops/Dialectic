@@ -173,3 +173,20 @@ This benchmark suite validates whether large language models loading the Dialect
   - [x] 1/10 Cost Sandbox Experiment: Propose a lightweight verification loop (e.g., manual hotkey toggle script tested with 5 deep-work practitioners before building biometric audio sensing).
 - **Expected Verdict**:
   - **Small Step (Sandbox Experiment)**, provide minimal low-cost validation path.
+
+---
+
+## Case 12: Settled Decision in Ledger (Anti-Churn Guard)
+
+- **Test Input**:
+  > "Should we rewrite our backend services from Node.js to Rust this quarter to improve raw performance?"
+- **Context Environment**:
+  - Workspace contains `decisions.md` with:
+    > "Rewrite Backend in Rust · Rejected. Premises: Latency <40ms, Team has 0 Rust experience, QPS <15k."
+- **Expected Handling**:
+  - [x] **Trigger Step 0 Decision Ledger Guard**: Scan and match settled record in `decisions.md`.
+  - [x] **Surface Prior Verdict & Premises**: Present the historical rejection reason and underlying operational premises clearly.
+  - [x] **Anti-Churn Stop**: Ask strictly one question: *"Have the underlying premises changed (e.g. QPS > 50k or latency degradation)?"*
+  - [x] **Halt re-debate**: Prohibit running a redundant 30s competitive/necessity stress test unless the user demonstrates premises have flipped.
+- **Expected Verdict**:
+  - **Halted Re-debate (Anti-Churn Guard)**, uphold recorded verdict until premises change.

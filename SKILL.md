@@ -17,13 +17,19 @@ description: >-
 
 ## 1. Fast Decision Protocol (30-Second Execution)
 
-Deliver a single-screen, zero-dependency stress test within 30 seconds:
+### 📖 Step 0 · Decision Ledger Readback (Anti-Churn Guard)
+- **Check Ledger First**: Before launching a new review, probe if a local decision ledger exists (`decisions.md`, `docs/decisions.md`, `.agents/decisions.md`, or `~/.agents/决策定论账本.md`).
+- **Settled Topic Match**: If the proposal matches a previously settled decision:
+  - Surface the recorded **Verdict** and **Prerequisites**.
+  - Ask strictly one question: *"Have the underlying premises changed?"*
+  - **Premises Unchanged** → Terminate debate immediately to eliminate recursive friction.
+  - **Premises Flipped** → Reopen and proceed with a full 30s review.
 
-### 🔍 Proactive Competitor Review Syntax
+### 🔍 Step 1 · Proactive Competitor Review Syntax
 - **Never demand links from the user**: If no link is provided, proactively invoke web search tools (`search_web` / `web_search`) to inspect top 2–3 market competitors.
 - **Search Golden Syntax**: Query `[Competitor Name] + "drawbacks / bad review / complaints / churn / why I quit / gotchas"` (or Chinese `[竞品] + "难用 / 缺点 / 吐槽 / 差评 / 避坑 / 为什么放弃"`) to mine verified pain points and churn reasons. Never treat unverified emotional rants as established facts.
 
-### ⚡ Standard Output Format (One Screen to Truth)
+### ⚡ Step 2 · Standard Output Format (One Screen to Truth)
 
 ```markdown
 # 🔪 [Necessity ｜ Friction ｜ Compliance ｜ Innovation] Review: [Proposal Name]
