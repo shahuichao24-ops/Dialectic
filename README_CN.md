@@ -102,7 +102,7 @@ flowchart LR
 ```bash
 agy plugin install https://github.com/shahuichao24-ops/Dialectic
 ```
-或者在反重力对话中直接让小八安装：
+或者直接在反重力对话中让 Agent 安装：
 > *"请为我安装这个反重力插件：https://github.com/shahuichao24-ops/Dialectic"*
 
 **通用 Agent 技能安装**（Claude Code、Cursor、Windsurf、OpenClaw、Codex 等）：
