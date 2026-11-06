@@ -97,7 +97,15 @@ Dialectic integrates an automated **Decision Ledger Guard**:
 
 ## Install
 
-**Universal Agent Skill** (Claude Code, Cursor, Windsurf, Antigravity, OpenClaw, Codex):
+**Google Antigravity Native Plugin**:
+
+```bash
+agy plugin install https://github.com/shahuichao24-ops/Dialectic
+```
+Or tell Antigravity in chat:
+> *"Install Antigravity plugin: https://github.com/shahuichao24-ops/Dialectic"*
+
+**Universal Agent Skill** (Claude Code, Cursor, Windsurf, OpenClaw, Codex):
 
 ```bash
 npx skills add shahuichao24-ops/Dialectic -g -y

@@ -1,0 +1,21 @@
+{
+  "name": "dialectic",
+  "displayName": "驳真 · Dialectic",
+  "description": "专为决策而生的 AI 挑刺合伙人。写下第一行代码前 30 秒，挖掘竞品差评与弃用事实，推演组织阻力与合规红线，否定必给 1/10 成本生路，内置定论账本防内耗。",
+  "version": "5.0.0",
+  "author": {
+    "name": "沙汇潮",
+    "url": "https://github.com/shahuichao24-ops"
+  },
+  "homepage": "https://github.com/shahuichao24-ops/Dialectic",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shahuichao24-ops/Dialectic.git"
+  },
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "帮我用驳真对这个新功能做一次方案极限压力测试",
+    "我想给工具加打卡积分系统提高次留，帮我挑挑死穴",
+    "如果放弃这个重构方案，怎么花 1/10 成本验证核心假设？"
+  ]
+}

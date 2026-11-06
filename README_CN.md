@@ -97,7 +97,15 @@ flowchart LR
 
 ## 安装与使用
 
-**通用 Agent 技能安装**（Claude Code、Cursor、Windsurf、Antigravity、OpenClaw、Codex 等）：
+**Google Antigravity 官方原生插件**：
+
+```bash
+agy plugin install https://github.com/shahuichao24-ops/Dialectic
+```
+或者在反重力对话中直接让小八安装：
+> *"请为我安装这个反重力插件：https://github.com/shahuichao24-ops/Dialectic"*
+
+**通用 Agent 技能安装**（Claude Code、Cursor、Windsurf、OpenClaw、Codex 等）：
 
 ```bash
 npx skills add shahuichao24-ops/Dialectic -g -y

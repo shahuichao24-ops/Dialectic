@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="16" y1="16" x2="112" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E2024"/>
+      <stop offset="100%" stop-color="#0E1012"/>
+    </linearGradient>
+    <linearGradient id="bladeEdge" x1="36" y1="28" x2="92" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="45%" stop-color="#DCE2EC"/>
+      <stop offset="100%" stop-color="#8492A6"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="40" y1="20" x2="88" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="subtleDrop" x="0" y="2" width="128" height="126" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Base Badge / Container (Dark Titanium Hexagon-Shield) -->
+  <rect x="12" y="12" width="104" height="104" rx="26" fill="url(#bgGrad)" stroke="#2D323A" stroke-width="2" filter="url(#subtleDrop)"/>
+
+  <!-- Subtle Precision Gridlines (Decision Framework) -->
+  <circle cx="64" cy="64" r="36" stroke="#262B34" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <line x1="64" y1="24" x2="64" y2="104" stroke="#262B34" stroke-width="1.2"/>
+  <line x1="24" y1="64" x2="104" y2="64" stroke="#262B34" stroke-width="1.2"/>
+
+  <!-- Stylized Adversarial Scalpel / Blade (Precision Truth-Seeking) -->
+  <!-- Left Spine (Matte Steel) -->
+  <path d="M64 26 L48 54 L64 96 Z" fill="#64748B" opacity="0.9"/>
+  
+  <!-- Right Cutting Edge (Razor Sharp Gradient) -->
+  <path d="M64 26 L80 54 L64 96 Z" fill="url(#bladeEdge)"/>
+
+  <!-- Blade Center Ridge Highlight -->
+  <line x1="64" y1="26" x2="64" y2="96" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Golden Pivot / Fulcrum / Decision Ledger Dot (1/10 Way Out Pivot) -->
+  <circle cx="64" cy="64" r="4.5" fill="url(#accentGlow)" stroke="#1E2024" stroke-width="1.5"/>
+
+  <!-- Balance Accents (Adversarial Weights) -->
+  <circle cx="44" cy="64" r="2.5" fill="#94A3B8"/>
+  <circle cx="84" cy="64" r="2.5" fill="#F59E0B"/>
+</svg>
