@@ -3,7 +3,7 @@
   <p><b>写下第一行代码前，直面最致命的死穴。</b></p>
   <p><a href="README.md">English</a> · 中文</p>
   <p>
-    <a href="https://github.com/shahuichao24-ops/Dialectic-skill/releases"><img src="https://img.shields.io/badge/版本-5.0.0-141413?style=flat-square" alt="版本"></a>
+    <a href="https://github.com/shahuichao24-ops/Dialectic/releases"><img src="https://img.shields.io/badge/版本-5.0.0-141413?style=flat-square" alt="版本"></a>
     <img src="https://img.shields.io/badge/依赖-0-2e7d32?style=flat-square" alt="零环境依赖">
     <img src="https://img.shields.io/badge/提示词开销-~1.2k%20tokens-1B365D?style=flat-square" alt="提示词体积">
     <a href="LICENSE"><img src="https://img.shields.io/badge/开源协议-MIT-30302e.svg?style=flat-square" alt="开源协议"></a>
@@ -100,13 +100,13 @@ flowchart LR
 **通用 Agent 技能安装**（Claude Code、Cursor、Windsurf、Antigravity、OpenClaw、Codex 等）：
 
 ```bash
-npx skills add shahuichao24-ops/Dialectic-skill -g -y
+npx skills add shahuichao24-ops/Dialectic -g -y
 ```
 
 技能统一存放在 `~/.agents/skills` 目录，各客户端自动识别为 `/dialectic`。
 
 或者直接让你的 Agent 安装：
-> *"请为我安装这个技能：https://github.com/shahuichao24-ops/Dialectic-skill"*
+> *"请为我安装这个技能：https://github.com/shahuichao24-ops/Dialectic"*
 
 **提示词 / 规则零环境接入**：
 

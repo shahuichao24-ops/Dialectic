@@ -3,7 +3,7 @@
   <p><b>Before writing a single line of code, face the fatal blind spot.</b></p>
   <p>English · <a href="README_CN.md">中文</a></p>
   <p>
-    <a href="https://github.com/shahuichao24-ops/Dialectic-skill/releases"><img src="https://img.shields.io/badge/version-5.0.0-141413?style=flat-square" alt="Version"></a>
+    <a href="https://github.com/shahuichao24-ops/Dialectic/releases"><img src="https://img.shields.io/badge/version-5.0.0-141413?style=flat-square" alt="Version"></a>
     <img src="https://img.shields.io/badge/dependencies-0-2e7d32?style=flat-square" alt="Zero Dependencies">
     <img src="https://img.shields.io/badge/prompt-~1.2k%20tokens-1B365D?style=flat-square" alt="Prompt Size">
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-30302e.svg?style=flat-square" alt="License"></a>
@@ -100,13 +100,13 @@ Dialectic integrates an automated **Decision Ledger Guard**:
 **Universal Agent Skill** (Claude Code, Cursor, Windsurf, Antigravity, OpenClaw, Codex):
 
 ```bash
-npx skills add shahuichao24-ops/Dialectic-skill -g -y
+npx skills add shahuichao24-ops/Dialectic -g -y
 ```
 
 Installed to `~/.agents/skills` as `/dialectic`.
 
 Or ask your agent directly:
-> *"Install Dialectic from https://github.com/shahuichao24-ops/Dialectic-skill"*
+> *"Install Dialectic from https://github.com/shahuichao24-ops/Dialectic"*
 
 **Prompt / Rules (Zero Environment Setup)**:
 
